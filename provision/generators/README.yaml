@@ -43,6 +43,10 @@ badges:
     image: 'https://img.shields.io/github/release/hadenlabs/dockerfiles.svg'
     url: 'https://travis-ci.org/hadenlabs/dockerfiles/releases'
 
+# Bulleted features to display
+features:
+  - "Docker image to run youtube-dl"
+
 # Short description of this project
 description: |-
   A collection of delicious docker recipes.
