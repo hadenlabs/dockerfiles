@@ -45,7 +45,7 @@ badges:
 
 # Bulleted features to display
 features:
-  - "Docker image to run youtube-dl"
+  - 'Docker image to run youtube-dl'
 
 # Short description of this project
 description: |-
