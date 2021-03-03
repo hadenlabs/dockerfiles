@@ -45,7 +45,7 @@ badges:
 
 # Short description of this project
 description: |-
-  dockerfiles images for docker.
+  A collection of delicious docker recipes.
 
 requirements: |-
 
@@ -60,7 +60,10 @@ usage: |-
   ```bash
   ```
 
-# Contributors to this project
-contributors:
-  - name: 'Luis Mayta'
-    github: 'luismayta'
+todo:
+  - name: caddy
+    url: 'https://caddyserver.com/'
+    done: false
+  - name: pandoc
+    url: 'https://pandoc.org/'
+    done: false
