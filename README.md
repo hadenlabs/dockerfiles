@@ -16,13 +16,16 @@
 
 [![Build Status](https://travis-ci.org/hadenlabs/dockerfiles.svg?branch=main)](https://travis-ci.org/hadenlabs/dockerfiles) [![Issues](https://img.shields.io/github/issues/hadenlabs/dockerfiles.svg)](https://github.com/hadenlabs/dockerfiles/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/dockerfiles.svg)](https://travis-ci.org/hadenlabs/dockerfiles/releases)
 
-dockerfiles images for docker.
-
----
+A collection of delicious docker recipes.
 
 This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) dockerfile.
 
 It's 100% Open Source and licensed under the [MIT](LICENSE).
+
+## To do
+
+- [] [caddy](https://caddyserver.com/)
+- [] [pandoc](https://pandoc.org/)
 
 ## Requirements
 
@@ -93,11 +96,3 @@ All other trademarks referenced herein are the property of their respective owne
 ## About
 
 This project is maintained and funded by [Hadenlabs][https://hadenlabs.com]. Like it? Please let us know at <support@hadenlabs.com>
-
-### Contributors
-
-| [![Luis Mayta][luismayta_avatar]][luismayta_homepage]<br/>[Luis Mayta][luismayta_homepage] |
-| ------------------------------------------------------------------------------------------ |
-
-[luismayta_homepage]: https://github.com/luismayta
-[luismayta_avatar]: https://github.com/luismayta.png?size=150
