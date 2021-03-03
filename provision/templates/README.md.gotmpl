@@ -39,6 +39,11 @@ This project is part of our comprehensive [{{ printf (ds "config").company.name}
 {{ end }}
 {{ end }}
 
+{{ if has (ds "config") "feature" }}
+## :sparkles: Features
+{{ range $feature := .features }}{{printf "- %s\n" $feature}}{{ end }}
+{{ end }}
+
 {{ if has (ds "config") "introduction" }}
 
 ## Introduction
@@ -48,7 +53,7 @@ This project is part of our comprehensive [{{ printf (ds "config").company.name}
 
 {{ if has (ds "config") "todo" }}
 
-## Todo
+## To do
 
 {{ range $todo := (ds "config").todo }}
 {{- if $todo.done }}
