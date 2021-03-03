@@ -22,6 +22,10 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) doc
 
 It's 100% Open Source and licensed under the [MIT](LICENSE).
 
+## :sparkles: Features
+
+- Docker image to run youtube-dl
+
 ## To do
 
 - [] [caddy](https://caddyserver.com/)
