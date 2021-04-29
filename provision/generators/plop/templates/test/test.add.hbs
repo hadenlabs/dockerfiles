@@ -7,14 +7,14 @@ import (
     "github.com/stretchr/testify/assert"
 )
 
-func Test{{pascalCase testName}}LatestSuccess(t *testing.T) {
+func Test{{pascalCase imageName}}LatestSuccess(t *testing.T) {
 
-	tag := "hadenlabs/{{testName}}:latest"
+	tag := "hadenlabs/{{lowerCase imageName}}:latest"
 	buildOptions := &docker.BuildOptions{
 		Tags: []string{tag},
 	}
 
-	docker.Build(t, "../{{testName}}", buildOptions)
+	docker.Build(t, "../{{lowerCase imageName}}", buildOptions)
 
 	opts := &docker.RunOptions{Command: []string{"python", "--version"}}
 	output := docker.Run(t, tag, opts)
