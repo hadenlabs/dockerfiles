@@ -1,8 +1,7 @@
 import { Actions, PlopGeneratorConfig } from 'node-plop'
-import slugify from 'slugify'
 import * as path from 'path'
 import { ImagePrompNames, Answers } from './entities'
-import { baseRootPath, baseTemplatesPath, pathExists, pathMake } from '../utils'
+import { baseRootPath, baseTemplatesPath, pathExists, pathMake, sanitize } from '../utils'
 const testPath = path.join(baseRootPath, 'test')
 
 export const testGenerator: PlopGeneratorConfig = {
@@ -23,7 +22,7 @@ export const testGenerator: PlopGeneratorConfig = {
   ],
   actions: (data) => {
     const answers = data as Answers
-    const imagePath = `${baseRootPath}/${slugify(answers.imageName, '_')}`
+    const imagePath = `${baseRootPath}/${sanitize(answers.imageName)}`
     if (pathExists(imagePath)) {
       throw new Error(`Stage '${answers.imageName}' exists in '${imagePath}'`)
     }
@@ -42,7 +41,7 @@ export const testGenerator: PlopGeneratorConfig = {
       actions.push({
         type: 'add',
         templateFile: `${baseTemplatesPath}/test/test.add.hbs`,
-        path: `${testPath}/docker_${slugify(answers.imageName, '_')}_test.go`
+        path: `${testPath}/docker_${sanitize(answers.imageName)}_test.go`
       })
     }
 

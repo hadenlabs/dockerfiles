@@ -1,9 +1,10 @@
 import {
-  hyphenate,
   baseRootPath,
+  baseTemplatesPath,
+  cleanString,
+  hyphenate,
   pathExists,
   pathMake,
-  baseTemplatesPath,
-  cleanString
+  sanitize
 } from './helpers'
-export { hyphenate, baseRootPath, pathExists, pathMake, baseTemplatesPath, cleanString }
+export { hyphenate, baseRootPath, pathExists, pathMake, baseTemplatesPath, cleanString, sanitize }
