@@ -14,22 +14,19 @@
 
 # dockerfiles
 
-[![Build Status](https://travis-ci.org/hadenlabs/dockerfiles.svg?branch=main)](https://travis-ci.org/hadenlabs/dockerfiles) [![Issues](https://img.shields.io/github/issues/hadenlabs/dockerfiles.svg)](https://github.com/hadenlabs/dockerfiles/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/dockerfiles.svg)](https://travis-ci.org/hadenlabs/dockerfiles/releases)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/dockerfiles?label=latest&sort=semver)](https://github.com/hadenlabs/dockerfiles/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/lint-code)](https://github.com/hadenlabs/dockerfiles/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/dockerfiles)](https://github.com/hadenlabs/dockerfiles/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/dockerfiles)](https://github.com/hadenlabs/dockerfiles/releases)
 
 A collection of delicious docker recipes.
 
-This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) dockerfile.
-
-It's 100% Open Source and licensed under the [MIT](LICENSE).
-
-## :sparkles: Features
+## Features
 
 - Docker image to run youtube-dl
 
-## To do
+## To-do
 
-- [] [caddy](https://caddyserver.com/)
-- [] [pandoc](https://pandoc.org/)
+- [caddy](https://caddyserver.com/)
+
+- [pandoc](https://pandoc.org/)
 
 ## Requirements
 
@@ -49,7 +46,7 @@ https://github.com/hadenlabs/dockerfiles
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/hadenlabs/dockerfiles/issues), send us an [email][email] or join our [Slack Community][slack].
+File a GitHub [issue](https://github.com/hadenlabs/dockerfiles/issues).
 
 ## Contributing
 
@@ -57,9 +54,7 @@ File a GitHub [issue](https://github.com/hadenlabs/dockerfiles/issues), send us 
 
 Please use the [issue tracker](https://github.com/hadenlabs/dockerfiles/issues) to report any bugs or file feature requests.
 
-### Developing
-
-If you are interested in being a contributor and want to get involved in developing this project or [help out](https://hadenlabs.com) with our other projects, we would love to hear from you! Shoot us an [email](mailto:support@hadenlabs.com).
+### Development
 
 In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
@@ -71,32 +66,33 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
 
-### Versioning
+## Module Versioning
 
-Releases are managed using github release feature. We use \[Semantic Versioning\](<http://semver.org>) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+This Module follows the principles of [Semantic Versioning (SemVer)](https://semver.org/).
+
+Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following constructs:
+
+1. Use the `MAJOR` version for incompatible changes.
+1. Use the `MINOR` version when adding functionality in a backwards compatible manner.
+1. Use the `PATCH` version when introducing backwards compatible bug fixes.
+
+### Backwards compatibility in `0.0.z` and `0.y.z` version
+
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is increased. (Pre-release)
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
-## License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-The MIT License (MIT)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Source: <https://opensource.org/licenses/MIT>
-
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
 
-## About
+## License
 
-This project is maintained and funded by [Hadenlabs][https://hadenlabs.com]. Like it? Please let us know at <support@hadenlabs.com>
+The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
+
+## Don't forget to 🌟 Star 🌟 the repo if you like dockerfiles
+
+[Your feedback is appreciated](https://github.com/hadenlabs/dockerfiles/issues)
