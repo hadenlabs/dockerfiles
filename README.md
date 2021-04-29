@@ -28,6 +28,8 @@ A collection of delicious docker recipes.
 
 - [pandoc](https://pandoc.org/)
 
+- [implement image shodan](https://github.com/hadenlabs/dockerfiles/issues/9)
+
 ## Requirements
 
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
