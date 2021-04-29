@@ -7,18 +7,6 @@
 # Name of this project
 name: dockerfiles
 
-company:
-  name: hadenlabs
-  description: |-
-    company labs
-  url: https://hadenlabs.com
-  github: https://github.com/hadenlabs
-  email: support@hadenlabs.com
-
-copyright:
-  name: Hadenlabs
-  url: https://hadenlabs.com
-
 email:
   support: support@hadenlabs.com
 
@@ -26,22 +14,25 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'MIT'
+license: 'LGPL-3.0'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/dockerfiles
 
 # Badges to display
 badges:
-  - name: 'Build Status'
-    image: 'https://travis-ci.org/hadenlabs/dockerfiles.svg?branch=main'
-    url: 'https://travis-ci.org/hadenlabs/dockerfiles'
-  - name: 'Issues'
-    image: 'https://img.shields.io/github/issues/hadenlabs/dockerfiles.svg'
-    url: 'https://github.com/hadenlabs/dockerfiles/issues'
-  - name: 'Latest Release'
-    image: 'https://img.shields.io/github/release/hadenlabs/dockerfiles.svg'
-    url: 'https://travis-ci.org/hadenlabs/dockerfiles/releases'
+  - name: GitHub tag (latest SemVer)
+    image: https://img.shields.io/github/v/tag/hadenlabs/dockerfiles?label=latest&sort=semver
+    url: https://github.com/hadenlabs/dockerfiles/releases
+  - name: Lint
+    image: https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/lint-code
+    url: https://github.com/hadenlabs/dockerfiles/actions
+  - name: Issues
+    image: https://img.shields.io/github/issues/hadenlabs/dockerfiles
+    url: https://github.com/hadenlabs/dockerfiles/issues
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/dockerfiles
+    url: https://github.com/hadenlabs/dockerfiles/releases
 
 # Bulleted features to display
 features:
