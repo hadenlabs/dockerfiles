@@ -102,12 +102,27 @@ repos:
           )$
         args:
           - --exclude=SC1072,SC1073,SC2068
+      - id: validate-toml
+      - id: no-go-testing
+      - id: golangci-lint
+        args:
+          - --fix
+          - --config=.github/linters/.golangci.yml
       - id: todocheck
       - id: gitleaks
         args:
           - --path=.
           - --repo-config-path=.github/linters/.gitleaks.toml
           - --verbose
+      - id: hadolint
+        args:
+          - --ignore=SC2001
+          - --ignore=SC2086
+          - --ignore=SC2102
+          - --ignore=DL3008
+          - --ignore=DL3013
+          - --ignore=DL3018
+          - --ignore=DL4006
 
   - repo: local
     hooks:
