@@ -1,5 +1,5 @@
 #
-# Dockerfile for {{testName}}
+# Dockerfile for {{imageName}}
 #
 
 FROM alpine:3.13.2
@@ -15,5 +15,5 @@ RUN set -xe \
 
 WORKDIR /data
 
-ENTRYPOINT [{{snakeCase testName}}]
+ENTRYPOINT [{{snakeCase imageName}}]
 CMD ["--help"]
