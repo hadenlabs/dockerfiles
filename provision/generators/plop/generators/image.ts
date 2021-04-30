@@ -4,8 +4,8 @@ import { ImagePrompNames, Answers } from './entities'
 import { baseRootPath, baseTemplatesPath, pathExists, pathMake, sanitize } from '../utils'
 const testPath = path.join(baseRootPath, 'test')
 
-export const testGenerator: PlopGeneratorConfig = {
-  description: 'add an path to test',
+export const imageGenerator: PlopGeneratorConfig = {
+  description: 'add an image',
   prompts: [
     {
       type: 'input',
@@ -23,6 +23,7 @@ export const testGenerator: PlopGeneratorConfig = {
   actions: (data) => {
     const answers = data as Answers
     const imagePath = `${baseRootPath}/${sanitize(answers.imageName)}`
+
     if (pathExists(imagePath)) {
       throw new Error(`Stage '${answers.imageName}' exists in '${imagePath}'`)
     }
@@ -40,7 +41,7 @@ export const testGenerator: PlopGeneratorConfig = {
     if (answers.wantTest) {
       actions.push({
         type: 'add',
-        templateFile: `${baseTemplatesPath}/test/test.add.hbs`,
+        templateFile: `${baseTemplatesPath}/image/test.add.hbs`,
         path: `${testPath}/docker_${sanitize(answers.imageName)}_test.go`
       })
     }

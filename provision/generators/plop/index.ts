@@ -1,8 +1,8 @@
 import { NodePlopAPI } from 'node-plop'
-import { testGenerator } from './generators'
+import { imageGenerator } from './generators'
 import { sanitize } from './helpers'
 
 export default function plop(plop: NodePlopAPI) {
-  plop.setGenerator('test', testGenerator)
+  plop.setGenerator('image', imageGenerator)
   plop.setHelper('sanitize', sanitize)
 }
