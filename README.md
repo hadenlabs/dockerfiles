@@ -24,11 +24,9 @@ A collection of delicious docker recipes.
 
 ## To-do
 
-- [caddy](https://caddyserver.com/)
+- [caddy](https://github.com/hadenlabs/dockerfiles/issues/14)
 
-- [pandoc](https://pandoc.org/)
-
-- [implement image shodan](https://github.com/hadenlabs/dockerfiles/issues/9)
+- [pandoc](https://github.com/hadenlabs/dockerfiles/issues/13)
 
 ## Requirements
 
