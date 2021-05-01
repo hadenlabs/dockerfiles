@@ -10,13 +10,19 @@ import (
 func Test{{pascalCase imageName}}LatestSuccess(t *testing.T) {
 
 	tag := "hadenlabs/{{snakeCase imageName}}:latest"
+  otherOptions := []string{
+		"--no-cache",
+	}
 	buildOptions := &docker.BuildOptions{
-		Tags: []string{tag},
+		Tags:         []string{tag},
+		OtherOptions: otherOptions,
 	}
 
 	docker.Build(t, "../{{snakeCase imageName}}", buildOptions)
 
-	opts := &docker.RunOptions{Command: []string{"python", "--version"}}
+  opts := &docker.RunOptions{
+		Command: []string{},
+	}
 	output := docker.Run(t, tag, opts)
-	assert.Equal(t, "Python 3.8.0", output)
+	assert.NotEmpty(t, output, output)
 }
