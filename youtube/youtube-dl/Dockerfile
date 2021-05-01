@@ -13,7 +13,6 @@ RUN set -xe \
         aria2 \
     && pip3 install --no-cache-dir youtube-dl
 
-
 WORKDIR /data
 
 ENTRYPOINT ["youtube-dl"]
