@@ -57,8 +57,6 @@ usage: |-
 
 todo:
   - name: caddy
-    url: 'https://caddyserver.com/'
+    url: 'https://github.com/hadenlabs/dockerfiles/issues/14'
   - name: pandoc
-    url: 'https://pandoc.org/'
-  - name: implement image shodan
-    url: 'https://github.com/hadenlabs/dockerfiles/issues/9'
+    url: 'https://github.com/hadenlabs/dockerfiles/issues/13'
