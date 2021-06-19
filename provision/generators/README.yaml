@@ -33,6 +33,12 @@ badges:
   - name: Latest Release
     image: https://img.shields.io/github/release/hadenlabs/dockerfiles
     url: https://github.com/hadenlabs/dockerfiles/releases
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
 
 # Bulleted features to display
 features:
@@ -53,6 +59,7 @@ requirements: |-
 # How to use this project
 usage: |-
   ```bash
+
   ```
 
 todo:
