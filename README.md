@@ -12,9 +12,9 @@
 
   -->
 
-# dockerfiles
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/dockerfiles?label=latest&sort=semver)](https://github.com/hadenlabs/dockerfiles/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/lint-code)](https://github.com/hadenlabs/dockerfiles/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/dockerfiles)](https://github.com/hadenlabs/dockerfiles/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/dockerfiles)](https://github.com/hadenlabs/dockerfiles/releases) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/dockerfiles?label=latest&sort=semver)](https://github.com/hadenlabs/dockerfiles/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/lint-code)](https://github.com/hadenlabs/dockerfiles/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/dockerfiles)](https://github.com/hadenlabs/dockerfiles/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/dockerfiles)](https://github.com/hadenlabs/dockerfiles/releases)
+# dockerfiles
 
 A collection of delicious docker recipes.
 
@@ -22,13 +22,11 @@ A collection of delicious docker recipes.
 
 - Docker image to run youtube-dl
 
-## To-do
+## TODO
 
-- [caddy](https://caddyserver.com/)
+- [caddy](https://github.com/hadenlabs/dockerfiles/issues/14)
 
-- [pandoc](https://pandoc.org/)
-
-- [implement image shodan](https://github.com/hadenlabs/dockerfiles/issues/9)
+- [pandoc](https://github.com/hadenlabs/dockerfiles/issues/13)
 
 ## Requirements
 
