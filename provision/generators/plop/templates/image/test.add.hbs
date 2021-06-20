@@ -9,7 +9,7 @@ import (
 
 func Test{{pascalCase imageName}}LatestSuccess(t *testing.T) {
 
-	tag := "hadenlabs/{{snakeCase imageName}}:latest"
+  tag := "hadenlabs/{{snakeCase imageName}}:latest"
   otherOptions := []string{
 		"--no-cache",
 	}
@@ -18,7 +18,7 @@ func Test{{pascalCase imageName}}LatestSuccess(t *testing.T) {
 		OtherOptions: otherOptions,
 	}
 
-	docker.Build(t, "../{{snakeCase imageName}}", buildOptions)
+  docker.Build(t, "../{{snakeCase imageName}}", buildOptions)
 
   opts := &docker.RunOptions{
 		Command: []string{},
