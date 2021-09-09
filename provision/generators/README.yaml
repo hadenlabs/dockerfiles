@@ -21,18 +21,15 @@ github_repo: hadenlabs/dockerfiles
 
 # Badges to display
 badges:
-  - name: GitHub tag (latest SemVer)
-    image: https://img.shields.io/github/v/tag/hadenlabs/dockerfiles?label=latest&sort=semver
-    url: https://github.com/hadenlabs/dockerfiles/releases
-  - name: Lint
-    image: https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/lint-code
-    url: https://github.com/hadenlabs/dockerfiles/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/dockerfiles
-    url: https://github.com/hadenlabs/dockerfiles/issues
   - name: Latest Release
     image: https://img.shields.io/github/release/hadenlabs/dockerfiles
     url: https://github.com/hadenlabs/dockerfiles/releases
+  - name: Lint
+    image: https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/lint-code
+    url: https://github.com/hadenlabs/dockerfiles/actions?workflow=lint-code
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
