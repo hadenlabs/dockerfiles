@@ -3,7 +3,7 @@ default_stages:
 
 repos:
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.0.0
+    rev: v2.1.0
     hooks:
       - id: codespell
         args: [--ignore-words=.codespell-ignores]
@@ -43,14 +43,11 @@ repos:
       - id: check-docstring-first
       - id: requirements-txt-fixer
       - id: check-symlinks
-      - id: name-tests-test
-        args:
-          - --django
       - id: file-contents-sorter
       - id: fix-encoding-pragma
       - id: sort-simple-yaml
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 2bed7c6ec4930b235aaf54aff1cf34e3df694f37
+    rev: 32eda4af34084f4e03d83a75b0ae3d2b91b45246
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -79,34 +76,4 @@ repos:
           - --verbose
       - id: hadolint
         args:
-          - --ignore=SC2001
-          - --ignore=SC2086
-          - --ignore=SC2102
-          - --ignore=DL3008
-          - --ignore=DL3013
-          - --ignore=DL3018
-          - --ignore=DL4006
-
-  - repo: local
-    hooks:
-      - id: prettier
-        name: prettier
-        language: system
-        entry: ./node_modules/prettier/bin-prettier.js
-        args:
-          - '--write=true'
-          - '--config=.github/linters/prettier.config.js'
-          - '--ignore-path=.github/linters/.prettierignore'
-        files: \.(js|jsx|json|ts|tsx|mjs|d.ts|md|yml|yaml|gql|graphql|mjml)$
-        exclude: node_modules
-      - id: eslint
-        name: eslint
-        language: node
-        entry: node_modules/eslint/bin/eslint.js
-        args:
-          - '--fix'
-          - '--color'
-          - '--config=.github/linters/.eslintrc.js'
-          - '--ignore-path=.github/linters/.eslintignore'
-        files: \.(js|jsx|ts|tsx|mjs|d.ts)$
-        exclude: node_modules
+          - --config=.github/linters/.hadolint.yaml
