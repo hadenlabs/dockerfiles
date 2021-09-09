@@ -24,11 +24,14 @@ REPOSITORY_OWNER:=${TEAM}
 AWS_VAULT ?= ${TEAM}
 PROJECT := dockerfiles
 
-PYTHON_VERSION=3.8.0
+PYTHON_VERSION=3.9.2
 NODE_VERSION=14.16.1
 PYENV_NAME="${PROJECT}"
-GIT_IGNORES:=python,node,go,docker
+GIT_IGNORES:=python,node,go,zsh
 GI:=gi
+
+# issues reviewers
+REVIEWERS?=luismayta
 
 # Configuration.
 SHELL ?=/bin/bash
