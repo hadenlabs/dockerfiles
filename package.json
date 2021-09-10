@@ -23,7 +23,6 @@
     "ncu": "ncu -u --target minor",
     "ncu:patch": "ncu -u --target patch",
     "prebuild": "mkdirp build && yarn run clean:build:all",
-    "precommit": "lint-staged",
     "prettier": "prettier --config=.github/linters/prettier.config.js --ignore-path=.github/linters/.prettierignore --list-different",
     "prettier:fix": "yarn prettier:lint --write=true",
     "prettier:lint": "yarn prettier '**/*.{js?(on),ts?(x),scss,md,y?(a)ml,gql,graphql?(s),less,mjml}' --write=false"
@@ -31,12 +30,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn precommit",
-      "commit-msg": "commitlint --config=.github/linters/.commitlintrc.json -E HUSKY_GIT_PARAMS"
-    }
   },
   "repository": {
     "type": "git",
@@ -66,8 +59,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^5.1.0",
     "handlebars-helpers": "^0.10.0",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.0.1",
     "node-plop": "^0.26.2",
     "plop": "^2.7.4",
     "prettier": "^2.3.2",
