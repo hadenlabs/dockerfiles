@@ -1,0 +1,47 @@
+options:
+  project_name:
+    environment: PROJECT_NAME
+    default:
+      command: basename $PWD
+
+  docker_registry:
+    environment: DOCKER_REPO
+    default: hadenlabs
+
+  version:
+    environment: GIT_HASH
+    default:
+      command: git rev-parse --short HEAD
+
+tasks:
+  docker:build:
+    options:
+      source:
+        usage: Directory to use
+        default: ./
+      repo:
+        usage: Docker repository to use
+        type: string
+        default: ${docker_registry}/${project_name}
+      tag:
+        usage: if provided, image will get tagged with this
+        default: latest
+    run:
+      - command: >-
+          docker
+          build
+          --file ${source}/Dockerfile
+          --tag ${repo}:${tag}
+          ${source}
+
+  docker:publish:
+    options:
+      image:
+        usage: docker image to tag
+        type: string
+        default: ${docker_registry}/${project_name}
+      tag:
+        usage: if provided, image will get tagged with this
+        default: latest
+    run:
+      - docker push ${image}:${tag}
