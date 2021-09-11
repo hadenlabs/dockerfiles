@@ -8,6 +8,9 @@ includes:
   gitflow: ./provision/task/gitflow.yml
   yarn: ./provision/task/yarn.yml
   version: ./provision/task/version.yml
+  plantuml:
+    taskfile: ./plantuml/Taskfile.yml
+    dir: ./plantuml
 
 env:
   DOCKER:
