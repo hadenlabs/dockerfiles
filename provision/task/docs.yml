@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  show:
+    desc: Show grip readme.
+    run: once
+    cmds:
+      - pipenv run grip
+  build:
+    desc: Build mkdocs.
+    run: once
+    cmds:
+      - pipenv run mkdocs build
+  precommit:
+    desc: Server make documentation.
+    run: once
+    cmds:
+      - pipenv run mkdocs serve

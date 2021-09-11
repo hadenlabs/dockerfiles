@@ -1,0 +1,21 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Setup python dependences.
+    run: once
+    cmds:
+      - pipenv install --dev --skip-lock
+  environment:
+    desc: Generate environment python.
+    run: once
+    cmds:
+      - pipenv --venv || pipenv install --skip-lock
+  precommit:
+    desc: Install pre-commit.
+    run: once
+    cmds:
+      - pipenv run pre-commit install
+      - pipenv run pre-commit install -t pre-push
+      - pipenv run pre-commit install -t commit-msg
+      - pipenv run pre-commit install -t prepare-commit-msg

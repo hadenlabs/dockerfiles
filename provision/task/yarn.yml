@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Setup yarn dependences.
+    run: once
+    cmds:
+      - yarn install
+  environment:
+    desc: Setup environment nvm version node.
+    run: once
+    cmds:
+      - nvm use {{.NODE_VERSION}}

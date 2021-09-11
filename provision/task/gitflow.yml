@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Setup all gitflow actions.
+    run: once
+    cmds:
+      - task: prefix
+  install:
+    desc: Install gitflow configuration.
+    run: once
+    cmds:
+      - gitflow init -d
+  prefix:
+    desc: Generate gitflow prefix of files.
+    run: once
+    cmds:
+      - git config gitflow.prefix.feature {{.GITFLOW_PREFIX_FEATURE}}

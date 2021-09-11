@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: setup git.
+    run: once
+    cmds:
+      - task: ignore
+      - task: reviews
+  ignore:
+    desc: Generate ignore.
+    run: once
+    cmds:
+      - gi {{.GIT_IGNORES}} > .gitignore
+  reviews:
+    desc: Add issues revievers.
+    run: once
+    cmds:
+      - git config github.reviews {{.REVIEWERS}}
