@@ -2,22 +2,21 @@
 
 version: '3'
 
-env:
-  PROJECT_NAME:
-    sh: basename $PWD
-
 vars:
   tag: latest
+  IMAGE_NAME_DIRSEARCH: dirsearch
 
 tasks:
   build:
     desc: Build Image.
     run: once
     cmds:
-      - docker build --file Dockerfile --tag {{.DOCKER_ORGANIZATION}}/{{.PROJECT_NAME}}:{{.tag}} .
+      - docker build --file Dockerfile --tag {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME_DIRSEARCH}}:{{.tag}} .
 
   publish:
     desc: Publish Image.
+    deps:
+      - build
     run: once
     cmds:
-      - docker push {{.DOCKER_ORGANIZATION}}/{{.PROJECT_NAME}}:{{.tag}}
+      - docker push {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME_DIRSEARCH}}:{{.tag}}

@@ -2,22 +2,19 @@
 
 version: '3'
 
-env:
-  PROJECT_NAME:
-    sh: basename $PWD
-
 vars:
   tag: latest
+  IMAGE_NAME_PANDOC: pandoc
 
 tasks:
   build:
-    desc: Build Image.
     run: once
+    desc: Build Image.
     cmds:
-      - docker build --file Dockerfile --tag {{.DOCKER_ORGANIZATION}}/{{.PROJECT_NAME}}:{{.tag}} .
+      - docker build --file Dockerfile --tag {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME_PANDOC}}:{{.tag}} .
 
   publish:
+    deps: [build]
     desc: Publish Image.
-    run: once
     cmds:
-      - docker push {{.DOCKER_ORGANIZATION}}/{{.PROJECT_NAME}}:{{.tag}}
+      - docker push {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME_PANDOC}}:{{.tag}}
