@@ -55,7 +55,7 @@ vars:
 tasks:
   default:
     deps:
-      - dependencies
+      - task: check
     cmds:
       - cmd: echo Application {{.APP_NAME}}
         silent: true
@@ -69,12 +69,8 @@ tasks:
       - echo "Docker available $DOCKER"
     silent: true
 
-  dependencies:
-    desc: 'Install all external dependencies using OS package manager'
-    deps:
-      - check:all
-
-  check:all:
+  check:
+    desc: 'Check all dependencies'
     deps:
       - python:check
       - go:check
@@ -89,6 +85,7 @@ tasks:
     desc: Generate Readme
     cmds:
       - gomplate --file {{.README_TEMPLATE}} --out {{.README_FILE}} --datasource config={{.README_YAML}}
+
   setup:
     desc: Setup dependences of project
     cmds:
@@ -96,6 +93,7 @@ tasks:
       - task: python:precommit
       - task: yarn:setup
       - task: git:setup
+      - task: gitflow:setup
       - task: go:setup
 
   environment:
