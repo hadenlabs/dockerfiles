@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: '3'
+
+env:
+  PROJECT_NAME:
+    sh: basename $PWD
+
+vars:
+  tag: latest
+
+tasks:
+  build:
+    desc: Build Image.
+    run: once
+    cmds:
+      - docker build --file Dockerfile --tag {{.DOCKER_ORGANIZATION}}/{{.PROJECT_NAME}}:{{.tag}} .
+
+  publish:
+    desc: Publish Image.
+    run: once
+    cmds:
+      - docker push {{.DOCKER_ORGANIZATION}}/{{.PROJECT_NAME}}:{{.tag}}

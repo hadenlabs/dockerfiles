@@ -11,6 +11,18 @@ includes:
   plantuml:
     taskfile: ./plantuml/Taskfile.yml
     dir: ./plantuml
+  shodan:
+    taskfile: ./shodan/Taskfile.yml
+    dir: ./shodan
+  pandoc:
+    taskfile: ./pandoc/Taskfile.yml
+    dir: ./pandoc
+  dirsearch:
+    taskfile: ./dirsearch/Taskfile.yml
+    dir: ./dirsearch
+  youtube-dl:
+    taskfile: ./youtube/youtube-dl/Taskfile.yml
+    dir: ./youtube/youtube-dl
 
 env:
   DOCKER:
