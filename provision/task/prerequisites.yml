@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  docker:
+    desc: exist docker
+    run: once
+    status:
+      - command -v docker
+  python:
+    desc: exist python
+    run: once
+    status:
+      - command -v python

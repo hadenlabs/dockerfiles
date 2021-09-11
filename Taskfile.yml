@@ -1,0 +1,91 @@
+version: '3'
+
+includes:
+  prerequisites: ./provision/task/prerequisites.yml
+  python: ./provision/task/python.yml
+  git: ./provision/task/git.yml
+  docs: ./provision/task/docs.yml
+  gitflow: ./provision/task/gitflow.yml
+  yarn: ./provision/task/yarn.yml
+  version: ./provision/task/version.yml
+
+env:
+  DOCKER:
+    sh: docker -v
+  PYTHON:
+    sh: python --version
+  LAST_GIT_TAG:
+    sh: git describe --tags $(git rev-list --tags --max-count=1) || echo "0.0.0"
+
+dotenv:
+  - .env
+
+vars:
+  APP_NAME: dockerfiles
+  DOCKER_ORGANIZATION: hadenlabs
+  REVIEWERS: luismayta
+  TEAM: hadenlabs
+  REPOSITORY_DOMAIN: github.com
+  REPOSITORY_OWNER: hadenlabs
+  PROJECT: dockerfiles
+  PYTHON_VERSION: 3.9.2
+  NODE_VERSION: 14.16.1
+  GIT_IGNORES: python,node,go,zsh
+  README_FILE: README.md
+  README_YAML: provision/generators/README.yaml
+  README_TEMPLATE: provision/templates/README.tpl.md
+
+tasks:
+  default:
+    deps:
+      - dependencies
+    cmds:
+      - cmd: echo Application {{.APP_NAME}}
+        silent: true
+      - task: version:default
+      - task: summary
+    silent: true
+
+  summary:
+    desc: 'Summary information'
+    cmds:
+      - echo "Docker available $DOCKER"
+    silent: true
+
+  dependencies:
+    desc: 'Install all external dependencies using OS package manager'
+    deps:
+      - prerequisites:all
+
+  prerequisites:all:
+    deps:
+      - prerequisites:docker
+      - prerequisites:python
+
+  readme:
+    run: once
+    desc: Generate Readme
+    cmds:
+      - gomplate --file {{.README_TEMPLATE}} --out {{.README_FILE}} --datasource config={{.README_YAML}}
+  setup:
+    desc: Setup dependences of project
+    cmds:
+      - task: python:setup
+      - task: python:precommit
+      - task: yarn:setup
+      - task: git:setup
+
+  environment:
+    desc: Setup environment of project
+    cmds:
+      - task: python:environment
+
+  dev:update:
+    desc: 'Update container on development server'
+    deps:
+      - dependencies
+    cmds:
+      - task: compose:build
+      - task: clear:images
+      - task: compose:push
+      - task: portainer:update
