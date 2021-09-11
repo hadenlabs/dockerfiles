@@ -9,6 +9,7 @@ includes:
   yarn: ./provision/task/yarn.yml
   version: ./provision/task/version.yml
   go: ./provision/task/go.yml
+  changelog: ./provision/task/changelog.yml
   plantuml:
     taskfile: ./plantuml/Taskfile.yml
     dir: ./plantuml

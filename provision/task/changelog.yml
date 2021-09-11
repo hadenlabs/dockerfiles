@@ -1,0 +1,28 @@
+version: '3'
+
+env:
+  APP_TAG:
+
+tasks:
+
+  check:
+    desc: exist docker
+    run: once
+    status:
+      - command -v git-chglog
+
+  generate:
+    desc: Generate changelog
+    run: once
+    deps:
+      - check
+    cmds:
+      - git-chglog -o CHANGELOG.md
+
+  next:
+    desc: Generate next tag changelog
+    run: once
+    deps:
+      - check
+    cmds:
+      - git-chglog --next-tag {{.APP_TAG}} --output CHANGELOG.md
