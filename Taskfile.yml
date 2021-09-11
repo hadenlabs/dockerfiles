@@ -8,6 +8,7 @@ includes:
   gitflow: ./provision/task/gitflow.yml
   yarn: ./provision/task/yarn.yml
   version: ./provision/task/version.yml
+  go: ./provision/task/go.yml
   plantuml:
     taskfile: ./plantuml/Taskfile.yml
     dir: ./plantuml
@@ -46,6 +47,7 @@ vars:
   PYTHON_VERSION: 3.9.2
   NODE_VERSION: 14.16.1
   GIT_IGNORES: python,node,go,zsh
+  GOLANGCI_VERSION: 1.42.0
   README_FILE: README.md
   README_YAML: provision/generators/README.yaml
   README_TEMPLATE: provision/templates/README.tpl.md
@@ -89,18 +91,31 @@ tasks:
       - task: python:precommit
       - task: yarn:setup
       - task: git:setup
+      - task: go:setup
 
   environment:
     desc: Setup environment of project
     cmds:
       - task: python:environment
 
-  dev:update:
-    desc: 'Update container on development server'
-    deps:
-      - dependencies
+  build:docker:
+    run: once
+    desc: Build docker Image.
     cmds:
-      - task: compose:build
-      - task: clear:images
-      - task: compose:push
-      - task: portainer:update
+      - task: plantuml:build
+      - task: shodan:build
+      - task: pandoc:build
+      - task: dirsearch:build
+      - task: youtube-dl:build
+
+  push:docker:
+    run: once
+    desc: Push docker Image.
+    deps:
+      - build:docker
+    cmds:
+      - task: plantuml:publish
+      - task: shodan:publish
+      - task: pandoc:publish
+      - task: dirsearch:publish
+      - task: youtube-dl:publish
