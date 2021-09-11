@@ -1,7 +1,6 @@
 version: '3'
 
 tasks:
-
   check:
     desc: Exist git and dependences
     run: once
@@ -14,14 +13,14 @@ tasks:
     run: once
     preconditions:
       - sh: command -v git
-        msg: "Please Install git"
+        msg: 'Please Install git'
 
   check:gi:
     desc: Exist gi
     run: once
     preconditions:
       - sh: command -v gi
-        msg: "Please Install gi"
+        msg: 'Please Install gi'
 
   setup:
     desc: Setup git.
@@ -33,8 +32,11 @@ tasks:
   ignore:
     desc: Generate ignore.
     run: once
+    silent: true
     cmds:
       - gi {{.GIT_IGNORES}} > .gitignore
+      - echo "# custom git ignore files" >> .gitignore
+      - echo {{.GIT_IGNORES_CUSTOM}} | tr ' ' '\n' | sort -u >> .gitignore
     deps:
       - task: check:gi
 
