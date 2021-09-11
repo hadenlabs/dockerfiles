@@ -1,6 +1,14 @@
 version: '3'
 
 tasks:
+
+  check:
+    desc: exist yarn and dependences
+    run: once
+    status:
+      - command -v yarn
+      - command -v nvm
+
   setup:
     desc: Setup yarn dependences.
     run: once

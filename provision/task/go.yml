@@ -5,6 +5,16 @@ env:
     sh: find ./ -type f -name '*.go' | grep -v '/vendor/' | sort -u
 
 tasks:
+
+  check:
+    desc: exist go and dependences
+    run: once
+    status:
+      - command -v go
+      - command -v gofmt
+      - command -v golangci-lint
+      - command -v goreleaser
+
   setup:
     desc: Setup go dependences.
     run: once

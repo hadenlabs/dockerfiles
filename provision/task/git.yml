@@ -1,6 +1,13 @@
 version: '3'
 
 tasks:
+
+  check:
+    desc: exist git and dependences
+    run: once
+    status:
+      - command -v git
+
   setup:
     desc: setup git.
     run: once
