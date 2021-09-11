@@ -43,12 +43,19 @@ jobs:
       - name: check out a copy of the repo
         uses: actions/checkout@v2
 
+      - name: Install Task
+        uses: arduino/setup-task@v1
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: install Go
+      - name: Install Go
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go-version }}
-      - name: test
-        run: go test ./...
+
+      - name: Check Dependences
+        run: task go:check:go
+
+      - name: Test go
+        run: task go:test
