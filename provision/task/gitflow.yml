@@ -1,16 +1,26 @@
 version: '3'
 
 tasks:
+
+  check:
+    desc: exist go and dependences
+    run: once
+    status:
+      - command -v git
+      - command -v gitflow
+
   setup:
     desc: Setup all gitflow actions.
     run: once
     cmds:
       - task: prefix
+
   install:
     desc: Install gitflow configuration.
     run: once
     cmds:
       - gitflow init -d
+
   prefix:
     desc: Generate gitflow prefix of files.
     run: once

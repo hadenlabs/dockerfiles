@@ -1,7 +1,6 @@
 version: '3'
 
 includes:
-  prerequisites: ./provision/task/prerequisites.yml
   python: ./provision/task/python.yml
   git: ./provision/task/git.yml
   docs: ./provision/task/docs.yml
@@ -73,12 +72,17 @@ tasks:
   dependencies:
     desc: 'Install all external dependencies using OS package manager'
     deps:
-      - prerequisites:all
+      - check:all
 
-  prerequisites:all:
+  check:all:
     deps:
-      - prerequisites:docker
-      - prerequisites:python
+      - python:check
+      - go:check
+      - yarn:check
+      - changelog:check
+      - git:check
+      - gitflow:check
+      - docs:check
 
   readme:
     run: once

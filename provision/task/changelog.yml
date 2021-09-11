@@ -6,7 +6,7 @@ env:
 tasks:
 
   check:
-    desc: exist docker
+    desc: exist git-chglog
     run: once
     status:
       - command -v git-chglog

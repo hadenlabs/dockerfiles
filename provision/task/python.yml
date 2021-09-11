@@ -1,16 +1,27 @@
 version: '3'
 
 tasks:
+
+  check:
+    desc: exist python and dependences
+    run: once
+    status:
+      - command -v pipenv
+      - command -v python
+      - pipenv run pre-commit --version
+
   setup:
     desc: Setup python dependences.
     run: once
     cmds:
       - pipenv install --dev --skip-lock
+
   environment:
     desc: Generate environment python.
     run: once
     cmds:
       - pipenv --venv || pipenv install --skip-lock
+
   precommit:
     desc: Install pre-commit.
     run: once

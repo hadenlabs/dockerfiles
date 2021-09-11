@@ -1,17 +1,27 @@
 version: '3'
 
 tasks:
+  check:
+    desc: exist mkdocs and grip dependences
+    run: once
+    status:
+      - command -v pipenv
+      - pipenv run grip --version
+      - pipenv run mkdocs --version
+
   show:
     desc: Show grip readme.
     run: once
     cmds:
       - pipenv run grip
+
   build:
     desc: Build mkdocs.
     run: once
     cmds:
       - pipenv run mkdocs build
-  precommit:
+
+  serve:
     desc: Server make documentation.
     run: once
     cmds:
