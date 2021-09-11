@@ -40,6 +40,7 @@ badges:
 # Bulleted features to display
 features:
   - 'Docker image to run youtube-dl'
+  - 'Docker image to run pandoc'
 
 # Short description of this project
 description: |-
@@ -49,18 +50,18 @@ requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  ```{.sourceCode .bash}
-  https://github.com/hadenlabs/dockerfiles
+  - [docker](https://www.docker.com)
+  - [python](https://www.python.org)
+  - [taskfile](https://github.com/go-task/task)
+
   ```
 
 # How to use this project
 usage: |-
   ```bash
-
+  task setup
   ```
 
 todo:
   - name: caddy
     url: 'https://github.com/hadenlabs/dockerfiles/issues/14'
-  - name: pandoc
-    url: 'https://github.com/hadenlabs/dockerfiles/issues/13'
