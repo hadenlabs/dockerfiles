@@ -3,24 +3,45 @@ version: '3'
 tasks:
 
   check:
-    desc: exist git and dependences
+    desc: Exist git and dependences
     run: once
-    status:
-      - command -v git
+    deps:
+      - task: check:git
+      - task: check:gi
+
+  check:git:
+    desc: Exist git
+    run: once
+    preconditions:
+      - sh: command -v git
+        msg: "Please Install git"
+
+  check:gi:
+    desc: Exist gi
+    run: once
+    preconditions:
+      - sh: command -v gi
+        msg: "Please Install gi"
 
   setup:
-    desc: setup git.
+    desc: Setup git.
     run: once
     cmds:
       - task: ignore
       - task: reviews
+
   ignore:
     desc: Generate ignore.
     run: once
     cmds:
       - gi {{.GIT_IGNORES}} > .gitignore
+    deps:
+      - task: check:gi
+
   reviews:
     desc: Add issues revievers.
     run: once
     cmds:
       - git config github.reviews {{.REVIEWERS}}
+    deps:
+      - task: check:git
