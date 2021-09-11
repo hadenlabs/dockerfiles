@@ -51,6 +51,9 @@ vars:
   README_FILE: README.md
   README_YAML: provision/generators/README.yaml
   README_TEMPLATE: provision/templates/README.tpl.md
+  GIT_IGNORES_CUSTOM: >-
+    bin
+    TMP_CHANGELOG.md
 
 tasks:
   default:
