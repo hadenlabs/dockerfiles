@@ -1,0 +1,45 @@
+version: '3'
+
+env:
+  GO_FILES:
+    sh: find ./ -type f -name '*.go' | grep -v '/vendor/' | sort -u
+
+tasks:
+  setup:
+    desc: Setup go dependences.
+    run: once
+    cmds:
+      - go mod download
+      - go mod tidy
+      - go mod vendor
+      - go generate -v ./...
+
+  fmt:
+    desc: Setup go dependences.
+    run: once
+    cmds:
+      - gofmt -s -l -w $(GO_FILES)
+
+  lint:
+    desc: Run linter go.
+    run: once
+    cmds:
+      - golangci-lint run --config .github/linters/.golangci.yml
+
+  fix:
+    desc: Fix lint violations.
+    run: once
+    cmds:
+      - golangci-lint run --fix --config .github/linters/.golangci.yml
+
+  vet:
+    desc: Run go vet against code.
+    run: once
+    cmds:
+      - go vet ./ ...
+
+  build:
+    desc: Build go packages.
+    run: once
+    cmds:
+      - goreleaser build --snapshot --rm-dist
