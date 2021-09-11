@@ -85,6 +85,14 @@ tasks:
     deps:
       - task: check:go
 
+  test:
+    desc: Run go test against code.
+    run: once
+    cmds:
+      - go test -v ./...
+    deps:
+      - task: check:go
+
   build:
     desc: Build go packages.
     run: once
