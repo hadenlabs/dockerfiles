@@ -7,8 +7,21 @@
 # Name of this project
 name: dockerfiles
 
+# Tags of this project
+tags:
+  - template
+  - docker
+
+# Categories of this project
+categories:
+  - docker
+
 email:
   support: support@hadenlabs.com
+
+confluence:
+  space: DockerFiles
+  title: Project
 
 # Logo for this project
 #logo: docs/logo.png
@@ -27,6 +40,12 @@ badges:
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/lint-code
     url: https://github.com/hadenlabs/dockerfiles/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/ci
+    url: https://github.com/hadenlabs/dockerfiles/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/dockerfiles/test
+    url: https://github.com/hadenlabs/dockerfiles/actions?workflow=test
   - name: pre-commit
     image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
     url: https://github.com/pre-commit/pre-commit
@@ -41,6 +60,7 @@ badges:
 features:
   - 'Docker image to run youtube-dl'
   - 'Docker image to run pandoc'
+  - 'Docker image to run plantuml'
 
 # Short description of this project
 description: |-
@@ -50,11 +70,10 @@ requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  - [docker](https://www.docker.com)
+  - [Pyenv](https://github.com/pyenv/pyenv)
+  - [Docker](https://www.docker.com/)
   - [python](https://www.python.org)
   - [taskfile](https://github.com/go-task/task)
-
-  ```
 
 # How to use this project
 usage: |-
