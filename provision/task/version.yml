@@ -4,7 +4,7 @@ tasks:
   default:
     desc: 'Show current release version'
     cmds:
-      - echo "Release version $LAST_GIT_TAG"
+      - echo Release version {{.APP_TAG}}
     silent: true
 
   major:
