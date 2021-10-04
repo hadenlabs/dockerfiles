@@ -1,3 +1,7 @@
+<!-- Space: DockerFiles -->
+<!-- Parent: Project -->
+<!-- Title: How To Contribute -->
+
 # How To Contribute
 
 Contributions to dockerfiles are welcome.
