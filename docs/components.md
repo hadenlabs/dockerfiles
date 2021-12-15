@@ -1,11 +1,11 @@
-<!-- Space: DockerFiles -->
+<!-- Space: Dockerfiles -->
 <!-- Parent: Project -->
-<!-- Title: Commands -->
+<!-- Title: Components -->
 
 <!-- Label: Dockerfiles -->
 <!-- Label: Project -->
-<!-- Label: Commands -->
+<!-- Label: Components -->
 <!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
-## Commands
+# components
