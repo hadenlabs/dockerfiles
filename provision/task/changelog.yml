@@ -1,7 +1,6 @@
 version: '3'
 
 env:
-  APP_TAG:
   TMP_CHANGELOG_FILENAME: TMP_CHANGELOG.md
 
 tasks:
