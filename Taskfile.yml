@@ -51,6 +51,7 @@ vars:
   PROJECT_NAME: dockerfiles
   ORGANIZATION: hadenlabs
   DOCKER_ORGANIZATION: hadenlabs
+  DOCKER_PLATFORMS: linux/amd64,linux/arm/v7,linux/arm64/v8
   REVIEWERS: luismayta
   TEAM: hadenlabs
   REPOSITORY_DOMAIN: github.com
