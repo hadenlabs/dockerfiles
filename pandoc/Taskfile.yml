@@ -2,19 +2,32 @@
 
 version: '3'
 
-vars:
-  tag: latest
-  IMAGE_NAME_PANDOC: pandoc
-
 tasks:
   build:
+    desc: Build Image Without buildx.
     run: once
-    desc: Build Image.
     cmds:
-      - docker build --file Dockerfile --tag {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME_PANDOC}}:{{.tag}} .
+      - >-
+        docker build
+        --platform={{.DOCKER_PLATFORMS}}
+        --file Dockerfile
+        --tag {{.DOCKER_ORGANIZATION}}/{{.DOCKER_IMAGE_NAME}}:{{.DOCKER_TAG}} .
+        --build-arg VERSION={{.DOCKER_TAG}}
+    vars:
+      DOCKER_TAG: latest
+      DOCKER_IMAGE_NAME: pandoc
+      DOCKER_PLATFORMS: linux/amd64
 
   publish:
-    deps: [build]
-    desc: Publish Image.
+    desc: Publish Image with buildx .
+    run: once
     cmds:
-      - docker push {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME_PANDOC}}:{{.tag}}
+      - >-
+        docker buildx build --platform={{.DOCKER_PLATFORMS}}
+        --file Dockerfile
+        --tag {{.DOCKER_ORGANIZATION}}/{{.DOCKER_IMAGE_NAME}}:{{.DOCKER_TAG}} .
+        --push
+    vars:
+      DOCKER_TAG: latest
+      DOCKER_IMAGE_NAME: pandoc
+      DOCKER_PLATFORMS: linux/amd64
