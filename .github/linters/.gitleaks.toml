@@ -151,7 +151,6 @@ title = "gitleaks config"
   regex = '''[a-zA-Z]{3,10}:\/\/[^\/\s:@]{3,20}:[^\/\s:@]{3,20}@.{1,100}\/?.?'''
   tags = ["key", "URL", "generic"]
 
-
 [[rules]]
     description = "Env Var"
     regex = '''(?i)(apikey|secret|key|api|password|pass)=[0-9a-zA-Z-_.{}]{4,120}'''
@@ -175,6 +174,7 @@ title = "gitleaks config"
             '''git@gitlab.com''',
             '''slovacus@gmail.com''',
             '''luis@hadenlabs.com''',
+            '''security@hadenlabs.com''',
             '''hola@hadenlabs.com''',
             '''hello@hadenlabs.com''',
             '''support@hadenlbas.com''',
@@ -216,7 +216,6 @@ title = "gitleaks config"
 [[rules]]
   description = "Generic Secret"
   regex = '''[s|S][e|E][c|C][r|R][e|E][t|T].*['|\"][0-9a-zA-Z]{32,45}['|\"]'''
-
 
 [[rules]]
     description = "Files with keys and credentials"
